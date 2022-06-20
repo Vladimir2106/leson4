@@ -1,0 +1,315 @@
+
+/*  дополнительный код CSS пишем тут */
+/**
+ * From Mobile (320px) to Tablet Portrait (768px)
+
+ * 1 block -> all elements width: 50%
+ * 2 block -> all elements width: 50%
+ * 3 block -> 1 element in a row, full width 100% for all
+ * 4 block -> 1 element in a row, full width 100% for all
+ * 5 block -> all elements in 100% width
+*/
+@media (min-width:320px) and (max-width:768px){
+    .first{display: flex;}
+      .first .colored{
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: 50%;
+      }
+      .second{display: flex;}
+      .second .colored{
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: 50%;
+      }
+      .third {display: flex;}
+      .third .colored{
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: 1;
+      }
+      .fourth {display: flex;}
+      .fourth .colored:first-child{
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: 100%;
+      }
+      
+      .fifth {display: flex;}
+      .fifth .colored{
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: 100%;
+      }
+}
+
+
+/**
+* From Tablet Portrait (768px) to Tablet Landscape (960px)
+
+  * 1 block -> all elements width: 50%
+  * 2 block -> all elements width: 50%
+  * 3 block -> 1 element in a row, full width
+  * 4 block -> 1 and second: 50% and last element 100% width
+  * 5 block -> 2 elements in a row, 50% width, last one is 100% width
+*/
+
+@media (min-width:768px) and (max-width:960px){
+    .first{display: flex;}
+      .first .colored{
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: 50%;
+      }
+      .second{display: flex;}
+      .second .colored{
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: 50%;
+      }
+
+      .third {display: flex;}
+      .third .colored:nth-child(1){
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: 100%;
+      }
+
+      .fourth {display: flex;}
+      .fourth .colored:nth-child(1){
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: 50%;
+      }
+      .fourth .colored:nth-child(2){
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 50%;
+    }
+   
+      .fifth {display: flex;}
+      .fifth .colored:nth-child(1){
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: 50%;
+      }
+      .fifth .colored:nth-child(2){
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 50%;
+    }
+    .fifth .colored{
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 100%;
+    }
+}
+
+
+/**
+ * From Tablet Landscape (960px) to medium desktop (1200px)
+
+ * 1 block -> 2 elements in a row: all equal width, so it will have 2 rows width: 50%
+ * 2 block -> 2 elements in a row: all equal width
+ * 3 block -> 3 elements in a row: all equal width
+ * 4 block -> 3 elements in a row: 1 -> 35%, 2 -> 30% and 3 ->35%
+ * 5 block -> 2 elements in a row, all equal width, the last one should be 100% width
+*/
+
+@media (min-width:960px) and (max-width:1200px){
+    .first{display: flex;
+    flex-wrap: wrap;}
+      .first .colored{
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: 50%;
+      }
+
+      .second{display: flex;
+    flex-wrap: wrap;}
+      .second .colored{
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: 50%;
+      }
+
+      .third {display: flex;}
+      .third .colored{
+          flex-grow: 0;
+          flex-shrink: 1;
+          flex-basis: 1;
+      }
+   
+    .fourth {display: flex;}
+    .fourth .colored:nth-child(1){
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 35%;
+    }
+    .fourth .colored:nth-child(2){
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 30%;
+  }
+  .fourth .colored:nth-child(3){
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 35%;
+  }
+
+      .fifth {display: flex;}
+      .fifth .colored:nth-child(1){
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: 50%;
+      }
+      .fifth .colored:nth-child(2){
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 50%;
+    }
+    .fifth .colored:last-child{
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 100%;
+    }
+}
+
+/**
+ * From medium desktop (1200px) to large desktop (1800px)
+
+ * 1 block -> 2 elements in a row: all equal width, so it will have 2 rows width: 50%
+ * 2 block -> 2 elements in a row: all equal width
+ * 3 block -> 3 elements: 1 -> 50%, 2 -> 50% and last 100%
+ * 4 block -> 3 elements in a row: 1 -> 35%, 2 -> 30% and 3 ->35%
+ * 5 block -> 3 or 2 elements in a row, all 33% width, centered in center of parent block
+*/
+
+@media (min-width:1200px) and (max-width:1800px){
+    .first{display: flex;
+    flex-wrap: wrap;}
+      .first .colored{
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: 50%;
+      }
+
+      .second{display: flex;
+    flex-wrap: wrap;}
+      .second .colored{
+          flex-grow: 1;
+          flex-shrink: 0;
+          flex-basis: 0;
+      }
+
+    .third {display: flex;}
+    .third .colored:nth-child(1){
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 50%;
+    }
+    .third .colored:nth-child(2){
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 50%;
+  }
+  .third .colored:nth-child(3){
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 10%;
+  }
+
+  .fourth {display: flex;}
+  .fourth .colored:nth-child(1){
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 35%;
+  }
+  .fourth .colored:nth-child(2){
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 30%;
+}
+.fourth .colored:nth-child(3){
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 35%;
+}
+
+      .fifth {display: flex;
+    justify-content: center;}
+      .fifth .colored:nth-child(2){
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 50%;
+    }
+    .fifth {display: flex;}
+    .fifth .colored{
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 0;
+  }
+
+}
+
+/**
+ * From large Desktop (1800px)
+
+ * 1 block -> 4 elements in a row: all equal width
+ * 2 block -> 2 elements in a row: all equal width
+ * 3 block -> 3 elements in a row: all 25% width
+ * 4 block -> 3 elements in a row: 1 -> 25%, 2 -> 25% and 3 ->50%
+ * 5 block -> 5 elements in a row: all equal width
+*/
+
+@media (min-width:1800px){
+    .first{display: flex;}
+      .first .colored{
+          flex-grow: 1;
+          flex-shrink: 0;
+          flex-basis: 0;
+      }
+
+      .second{display: flex;
+    flex-wrap: wrap;}
+      .second .colored{
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: 50%;
+      }
+
+      .third {display: flex;}
+      .third .colored{
+          flex-grow: 0;
+          flex-shrink: 0;
+          flex-basis: 25%;
+      }
+   
+    .fourth {display: flex;}
+    .fourth .colored:nth-child(1){
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 25%;
+    }
+    .fourth .colored:nth-child(2){
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 25%;
+  }
+  .fourth .colored:nth-child(3){
+      flex-grow: 0;
+      flex-shrink: 0;
+      flex-basis: 50%;
+  }
+
+      .fifth {display: flex;}
+      .fifth .colored{
+          flex-grow: 0;
+          flex-shrink: 1;
+          flex-basis: 1;
+      }
+      
+}
+
+
+
